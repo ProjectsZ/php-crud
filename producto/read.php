@@ -5,7 +5,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     require_once "../config.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM employees WHERE id = ?";
+    $sql = "SELECT * FROM productos WHERE id = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -23,10 +23,14 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 contains only one row, we don't need to use while loop */
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
-                // Retrieve individual field value
+                // Retrieve individual field value               
+                $code = $row["code"];
                 $name = $row["name"];
-                $address = $row["address"];
-                $salary = $row["salary"];
+                $description = $row["description"];
+                $color = $row["color"];
+                $stock = $row["stock"];
+                $image= $row["image"];
+
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -68,22 +72,44 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>Ver Empleado</h1>
+                        <h1>Ver producto</h1>
+                    </div>
+                    <div class="form-group">
+                        <label>codigo</label>
+                        <p class="form-control-static"><?php echo $row["code"]; ?></p>
                     </div>
                     <div class="form-group">
                         <label>Nombre</label>
                         <p class="form-control-static"><?php echo $row["name"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Dirección</label>
-                        <p class="form-control-static"><?php echo $row["address"]; ?></p>
+                        <label>descripción</label>
+                        <p class="form-control-static"><?php echo $row["description"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Sueldo</label>
-                        <p class="form-control-static"><?php echo $row["salary"]; ?></p>
+                        <label>color</label>
+                        <p class="form-control-static"><?php echo $row["color"]; ?></p>
                     </div>
+                    <div class="form-group">
+                        <label>stock</label>
+                        <p class="form-control-static"><?php echo $row["stock"]; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>image</label>
+                        <p class="form-control-static"><?php echo $row["image"]; ?></p>
+                    </div>
+                    <?php
+                    if (!empty($image)) {
+                        echo '<div class="form-group">';
+                        echo '<img src="' . $image . '" class="img-thumbnail" alt="Uploaded Image">';
+                        echo '</div>';
+                    }
+                    ?>
                     <p><a href="../index.php" class="btn btn-primary">Volver</a></p>
                 </div>
+
+                
+
             </div>        
         </div>
     </div>
