@@ -10,7 +10,9 @@
 # Images
 
 #### view in mysql
-![HTML](screenshots/theme-coffee-html.png)
+![HTML](https://i.imgur.com/dvn85wg.png)
+#### view in php
+![HTML](https://i.imgur.com/TrY5FBJ.png)
 
 ### repositorio
 Repository : ( `https://github.com/ProjectsZ/php-crud/tree/producto` )
