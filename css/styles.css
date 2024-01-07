@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1A1A2E; /* Cambia esto según tu preferencia de color */
+}
+
+.login-container {
+     position: relative;
+     overflow: hidden;
+     width: 400px; /* Ajusta el ancho según tus necesidades */
+     height: 400px; /* Ajusta la altura según tus necesidades */
+     background-color: rgba(255, 255, 255, 0.1);
+     border-radius: 15px;
+     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+     backdrop-filter: blur(5px);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
+  }
+  .register-container {
+    position: relative;
+    overflow: hidden;
+    width: 420px; /* Ajusta el ancho según tus necesidades */
+    height: 700px; /* Ajusta la altura según tus necesidades */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
+ }
+
+.form-container {
+    text-align: center;
+    color: white;
+}
+
+.form-container input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: white;
+}
+
+.form-container button {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border: none;
+    background-color: #0F3460; /* Cambia esto según tu preferencia de color */
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.register-forget a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.theme-btn-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+
+.theme-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.illustration {
+    width: 80%; /* Ajusta el tamaño según tus necesidades */
+    margin-bottom: 20px;
+}

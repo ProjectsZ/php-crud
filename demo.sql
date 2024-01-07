@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-01-2024 a las 16:38:31
+-- Tiempo de generación: 06-01-2024 a las 23:17:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,11 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cliente` (
-  `Cliente_id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
   `Apellido` varchar(255) NOT NULL,
   `Telefono` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`cliente_id`, `Nombre`, `Apellido`, `Telefono`) VALUES
+(0, 'asd', 'asd', 123456789),
+(0, 'asd', 'asd', 123456789);
 
 -- --------------------------------------------------------
 
@@ -52,29 +60,34 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `name`, `address`, `salary`) VALUES
-(4, 'Marcelo', 'Tito Jaime', 1290);
+(4, 'Jhostin', 'ad', 1200);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `user`
 --
 
-CREATE TABLE `usuario` (
-  `Usuario_id` int(11) NOT NULL,
-  `NombreUsuario` varchar(100) NOT NULL,
-  `Contraseña` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`user_id`, `nombre`, `apellido`, `email`, `username`, `password`) VALUES
+(2, 'Jhostin Fabrizio', 'Almerco Machado', 'shoockwaveeyt@gmail.com', 'Jhostin', '$2y$10$/4kejiQXH1zRyB.tMwCnGOsRfvt9ooqOlSQt3O5bOC4B/E8RkzPmi'),
+(3, 'weq', 'wqe', 'shoockwaveeyt@gmail.com', 'qwe', '$2y$10$LaAQ/AqaKzXchRwRq1QKpu4hJc20R0btvZSSTok/YuO2YpUAomEfW');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`Cliente_id`);
 
 --
 -- Indices de la tabla `employees`
@@ -83,32 +96,26 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuario`
+-- Indices de la tabla `user`
 --
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`Usuario_id`);
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `Cliente_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT de la tabla `user`
 --
-ALTER TABLE `usuario`
-  MODIFY `Usuario_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
