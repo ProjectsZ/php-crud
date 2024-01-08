@@ -120,6 +120,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 </ul>
                 
             </div>
+            <!-- ventas -->
             <ul class="nav navbar-nav align-items-center ml-auto">
                 
                 <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
@@ -259,6 +260,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                     </div>
                 </li>
             </ul>
+            <!-- ventas fin -->
         </div>
     </nav>
     <ul class="main-search-list-defaultlist d-none">
@@ -624,34 +626,6 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
 
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>User Edit - Vuexy - Bootstrap HTML admin template</title>
+    <title>ventas</title>
     <link rel="apple-touch-icon" href="../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
@@ -756,7 +756,7 @@
                                                 <div class="col-12">
                                                     <div class="card">
                                                         <div class="card-header border-bottom">
-                                                            <h4 class="card-title"> productos</h4>
+                                                            <h4 class="card-title"> listado de productos</h4>
                                                         </div>
                                                         <div class="card-datatable">
 
@@ -775,11 +775,10 @@
                                         echo "<th>#</th>";
                                         echo "<th>codigo</th>";
                                         echo "<th>Nombre</th>";
-                                        echo "<th>descripcion</th>";
                                         echo "<th>color</th>";
                                         echo "<th>stock</th>";
                                         echo "<th>imagen</th>";
-                                        echo "<th>data</th>";
+                                        echo "<th>comprar</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
@@ -788,25 +787,19 @@
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['code'] . "</td>";
                                         echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['description'] . "</td>";
-                                        echo "<td>" . $row['color'] . "</td>";
-                                        echo "<td>" . $row['stock'] . "</td>";
-                                        echo "<td> <img src='".$row['image']."' alt='' width=100></td>";
+                                        echo "<td><span class='apexcharts-legend-marker' rel='3' data:collapsed='false' 
+        style='background: ". $row['color'] ." !important; color: ". $row['color'] ."; height: 24px; width: 24px; left: -3px; top: 1px; border-width: 0px; 
+        border-color: ". $row['color'] ."; border-radius: 12px;'></span></td>";
+                                        echo "<td>" . $row['stock'] . "</td>";                                        
+                                        echo "<td> 
+                                        <img src='../producto/" . $row['image'] . "' class='user-avatar users-avatar-shadow rounded mr-2 my-25 cursor-pointer' alt='Uploaded Image'
+                                                    width='100'>                                        
+                                        </td>";
                                         echo "<td>";
                                             echo "                                            
                                             <a class='nav-link d-flex align-items-center active' href='read.php?id=". $row['id'] ."'
-                                                aria-selected='true'><i data-feather='eye'></i><span class='d-none d-sm-block'></span>
+                                                aria-selected='true'><i data-feather='shopping-cart'></i><span class='d-none d-sm-block'></span>
                                             </a>                                            
-                                            ";
-                                            echo "                                           
-                                            <a class='nav-link d-flex align-items-center active' href='update.php?id=". $row['id'] ."'
-                                                aria-selected='true'><i data-feather='edit-2'></i><span class='d-none d-sm-block'></span>
-                                            </a>  
-                                            ";
-                                            echo "
-                                            <a class='nav-link d-flex align-items-center active' href='delete.php?id=". $row['id'] ."'
-                                                aria-selected='true'><i data-feather='trash'></i><span class='d-none d-sm-block'></span>
-                                            </a>
                                             ";
                                         echo "</td>";
                                     echo "</tr>";
