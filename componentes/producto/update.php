@@ -3,8 +3,8 @@
 require_once "../config.php";
  
 // Define variables and initialize with empty values
-$code = $name = $description = $color = $stock = $image = "";
-$code_err = $name_err = $description_err = $color_err = $stock_err = $image_err = "";
+$code = $name = $description = $color = $stock = $image = $price = "";
+$code_err = $name_err = $description_err = $color_err = $stock_err = $price_err = $image_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
@@ -57,8 +57,16 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $stock = $input_stock;
     }
     
-
-
+    
+ // Validate price
+ $input_price = trim($_POST["price"]);
+ if(empty($input_price)){
+     $price_err = "Por favor ingrese el monto del price del producto.";     
+ } elseif(!ctype_digit($input_price)){
+     $price_err = "Por favor ingrese un valor correcto y positivo.";
+ } else{
+     $price = $input_price;
+ }
 
 
 
@@ -103,11 +111,11 @@ if (!empty($_FILES['image']['tmp_name'])) {
 // Check input errors before updating in the database
 if (empty($code_err) && empty($name_err) && empty($description_err) && empty($color_err) && empty($stock_err) && empty($image_err)) {
     // Prepare an update statement
-    $sql = "UPDATE productos SET code=?, name=?, description=?, color=?, stock=?, image=? WHERE id=?";
+    $sql = "UPDATE productos SET code=?, name=?, description=?, color=?, stock=?, image=?, price = ? WHERE id=?";
 
     if($stmt = mysqli_prepare($link, $sql)) {
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "ssssisi", $param_code, $param_name, $param_description, $param_color, $param_stock, $param_image, $param_id);
+        mysqli_stmt_bind_param($stmt, "ssssisii", $param_code, $param_name, $param_description, $param_color, $param_stock, $param_image, $param_price, $param_id );
 
         // Set parameters
         $param_code = $code;
@@ -116,6 +124,7 @@ if (empty($code_err) && empty($name_err) && empty($description_err) && empty($co
         $param_color = $color;
         $param_stock = $stock;
         $param_image = $image;
+        $param_price = $price;
         $param_id = $id;
 
         // Attempt to execute the prepared statement
@@ -181,6 +190,7 @@ if (empty($code_err) && empty($name_err) && empty($description_err) && empty($co
                     $color = $row["color"];
                     $stock = $row["stock"];
                     $image= $row["image"];
+                    $price= $row["price"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -609,14 +619,6 @@ if (empty($code_err) && empty($name_err) && empty($description_err) && empty($co
 
 
 
-
-
-
-
-
-                
-
-
             </ul>
         </div>
     </div>
@@ -688,7 +690,7 @@ if (empty($code_err) && empty($name_err) && empty($description_err) && empty($co
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err;?></span>
                         </div>
-                        <div class="col-md-4 <?php echo (!empty($color_err)) ? 'has-error' : ''; ?>">
+                        <div class="col-md-2 <?php echo (!empty($color_err)) ? 'has-error' : ''; ?>">
                             <label>color</label>
                             <input type="text" name="color" class="form-control" value="<?php echo $color; ?>">
                             <span class="help-block"><?php echo $color_err;?></span>
@@ -697,6 +699,11 @@ if (empty($code_err) && empty($name_err) && empty($description_err) && empty($co
                             <label>stock</label>
                             <input type="text" name="stock" class="form-control" value="<?php echo $stock; ?>">
                             <span class="help-block"><?php echo $stock_err;?></span>
+                        </div>
+                        <div class="col-md-2 <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
+                            <label>precio</label>
+                            <input type="text" name="price" class="form-control" value="<?php echo $price; ?>">
+                            <span class="help-block"><?php echo $price_err;?></span>
                         </div>
                         
                         <div class="col-md-6 <?php echo (!empty($description_err)) ? 'has-error' : ''; ?>">
@@ -757,65 +764,7 @@ if (empty($code_err) && empty($name_err) && empty($description_err) && empty($co
                                
                                 
 
-
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 <br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                             </div>
@@ -881,24 +830,5 @@ if (empty($code_err) && empty($name_err) && empty($description_err) && empty($co
 <!-- END: Body-->
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

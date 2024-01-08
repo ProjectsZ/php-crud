@@ -426,29 +426,7 @@
                 <section class="app-user-edit">
                     <div class="card">
                         <div class="card-body">
-                            <ul class="nav nav-pills" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center active" id="account-tab"
-                                        data-toggle="tab" href="#account" aria-controls="account" role="tab"
-                                        aria-selected="true">
-                                        <i data-feather="user"></i><span class="d-none d-sm-block">Agregar</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" id="information-tab" data-toggle="tab"
-                                        href="#information" aria-controls="information" role="tab"
-                                        aria-selected="false">
-                                        <i data-feather="info"></i><span class="d-none d-sm-block">Information</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" id="social-tab" data-toggle="tab"
-                                        href="#social" aria-controls="social" role="tab" aria-selected="false">
-                                        <i data-feather="share-2"></i><span class="d-none d-sm-block">Social</span>
-                                    </a>
-                                </li>
-                            </ul>
-
+                            
 
 
 
@@ -787,9 +765,9 @@
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['code'] . "</td>";
                                         echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td><span class='apexcharts-legend-marker' rel='3' data:collapsed='false' 
+                                        echo "<td> <div class='col-12 d-flex mt-1 px-0'> <span class='apexcharts-legend-marker' rel='3' data:collapsed='false' 
         style='background: ". $row['color'] ." !important; color: ". $row['color'] ."; height: 24px; width: 24px; left: -3px; top: 1px; border-width: 0px; 
-        border-color: ". $row['color'] ."; border-radius: 12px;'></span></td>";
+        border-color: ". $row['color'] ."; border-radius: 12px;'></span> </div></td>";
                                         echo "<td>" . $row['stock'] . "</td>";                                        
                                         echo "<td> 
                                         <img src='../producto/" . $row['image'] . "' class='user-avatar users-avatar-shadow rounded mr-2 my-25 cursor-pointer' alt='Uploaded Image'
@@ -797,7 +775,7 @@
                                         </td>";
                                         echo "<td>";
                                             echo "                                            
-                                            <a class='nav-link d-flex align-items-center active' href='read.php?id=". $row['id'] ."'
+                                            <a class='nav-link d-flex align-items-center active' href='create.php?id=". $row['id'] ."'
                                                 aria-selected='true'><i data-feather='shopping-cart'></i><span class='d-none d-sm-block'></span>
                                             </a>                                            
                                             ";
