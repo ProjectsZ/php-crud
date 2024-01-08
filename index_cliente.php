@@ -84,15 +84,7 @@ $result_user = mysqli_query($link, $sql_user);
                 </div>
             </div>
 
-            <!-- Primer contenedor: Vista previa del producto e información del producto -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="container-preview">
-                        <h2>Vista Previa del Producto e Información</h2>
-                        <!-- Agrega aquí la información y vista previa del producto -->
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Segundo contenedor: Botones de agregar, ver venta y ver usuario -->
             <div class="row">
@@ -101,24 +93,16 @@ $result_user = mysqli_query($link, $sql_user);
                         <h2>Acciones</h2>
 
                         <a href="Empleado/create.php" class="btn btn-success">Agregar nuevo empleado</a>
-                        <a href="Cliente/Cliente_create" class="btn btn-primary">Ver la venta</a>
+                        <a href="app-todo.php" class="btn btn-primary"> Principal</a>
                         <a href="Cliente_Usuario/Cliente_create.php" class="btn btn-info">Registrar cliente</a>
-                        <a href="#" id="btnInfoUsuario" class="btn btn-info">Información de usuario</a>
+                        <a href="#" id="btnInfoUsuario" class="btn btn-info"> Información de usuario</a>
 
                         <!-- Agrega aquí otros botones de acciones según tus necesidades -->
                     </div>
                 </div>
             </div>
 
-            <!-- Tercer contenedor: Venta y logo del usuario (nombre de usuario, cargo) -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="container-user">
-                        <h2>Venta y Logo del Usuario</h2>
-                        <!-- Agrega aquí la información de venta y el logo del usuario -->
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Cuarto contenedor: Información del Usuario y Modificación -->
             <div class="row container-user-info">

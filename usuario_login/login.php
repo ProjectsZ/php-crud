@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if (password_verify($password, $hashed_password)) {
                         $_SESSION['user_id'] = $user_id;
                         $_SESSION['username'] = $username;
-                        header("Location: ../index_cliente.php");
+                        header("Location: ../app-todo.php");
                         exit();
                     } else {
                         $error_message = "Credenciales incorrectas";
