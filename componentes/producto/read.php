@@ -526,6 +526,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                                             <h4> <?php echo $row["name"]; ?> </h4>
                                             <div class="col-12 d-flex mt-1 px-0">
                                                 <div class="v-card-subtitle">C.D.: <?php echo $row["code"]; ?> </div>
+                                                
                                             </div>
                                             <div class="col-12 d-flex mt-1 px-0">
 
@@ -540,6 +541,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                                                  <?php echo  
                                                     '<input placeholder="" value="'. $stock .'" size="3" type="text" disabled>';
                                                 ?>
+                                                &nbsp;&nbsp;  <h3>S/. <?php echo $row["price"]; ?></h3>
                                             </div>
                                         </div>
                                     </div>

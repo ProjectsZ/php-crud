@@ -778,6 +778,7 @@
                                         echo "<th>descripcion</th>";
                                         echo "<th>color</th>";
                                         echo "<th>stock</th>";
+                                        echo "<th>precio</th>";
                                         echo "<th>imagen</th>";
                                         echo "<th>data</th>";
                                     echo "</tr>";
@@ -791,6 +792,8 @@
                                         echo "<td>" . $row['description'] . "</td>";
                                         echo "<td>" . $row['color'] . "</td>";
                                         echo "<td>" . $row['stock'] . "</td>";
+                                        echo "<td>" . $row['price'] . "</td>";
+                                        
                                         echo "<td> <img src='".$row['image']."' alt='' width=100></td>";
                                         echo "<td>";
                                             echo "                                            
