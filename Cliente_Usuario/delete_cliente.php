@@ -17,7 +17,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         // Intentar ejecutar la declaración preparada
         if (mysqli_stmt_execute($stmt)) {
             // Registros eliminados con éxito. Redirigir a la página principal
-            header("location: ../index.php");
+            header("location: ../index_cliente.php");
             exit();
         } else {
             echo "Oops! Algo salió mal. Por favor, inténtalo de nuevo más tarde.";
@@ -67,7 +67,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                             <p>¿Está seguro que desea borrar el registro?</p><br>
                             <p>
                                 <input type="submit" value="Sí" class="btn btn-danger">
-                                <a href="../index.php" class="btn btn-default">No</a>
+                                <a href="../index_cliente.php" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>

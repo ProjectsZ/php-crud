@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: ../index.php");
+                header("location: ../index_cliente.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -108,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $salary_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="../index.php" class="btn btn-default">Cancelar</a>
+                        <a href="../index_cliente.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>        

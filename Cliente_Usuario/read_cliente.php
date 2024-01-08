@@ -83,7 +83,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                         <label>Teléfono</label>
                         <p class="form-control-static"><?php echo $telefono; ?></p>
                     </div>
-                    <p><a href="../index.php" class="btn btn-primary">Volver</a></p>
+                    <p><a href="../index_cliente.php" class="btn btn-primary">Volver</a></p>
                 </div>
             </div>
         </div>

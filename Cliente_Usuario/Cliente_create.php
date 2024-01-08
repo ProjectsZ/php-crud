@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     if (mysqli_stmt_execute($stmt_insercion)) {
                         // Registros creados con éxito. Redirigir a la página principal
-                        header("location: ../index.php");
+                        header("location: ../index_cliente.php");
                         exit();
                     } else {
                         echo "Algo salió mal. Por favor, inténtelo de nuevo más tarde.";
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Enviar">
-                        <a href="../index.php" class="btn btn-default">Cancelar</a>
+                        <a href="../index_cliente.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>

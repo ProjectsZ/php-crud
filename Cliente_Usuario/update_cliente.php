@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     if (mysqli_stmt_execute($stmt_update)) {
                         // Records updated successfully. Redirect to landing page
-                        header("location: ../index.php");
+                        header("location: ../index_cliente.php");
                         exit();
                     } else {
                         echo "Algo salió mal. Por favor, inténtelo de nuevo más tarde.";
@@ -182,7 +182,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Enviar">
-                        <a href="../index.php" class="btn btn-default">Cancelar</a>
+                        <a href="../index_cliente.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>
