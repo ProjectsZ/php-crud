@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost/php-crud/Empleado/update.php?id=4 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Actualizar Registro</title>
+    <link rel="stylesheet" href="./Actualizar Registro_files/bootstrap.css">
+    <style type="text/css">
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h2>Actualizar Registro</h2>
+                    </div>
+                    <p>Edite los valores de entrada y envíe para actualizar el registro.</p>
+                    <form action="http://localhost/php-crud/Empleado/update.php?id=4" method="post">
+                        <div class="form-group ">
+                            <label>Nombre</label>
+                            <input type="text" name="name" class="form-control" value="Jhostin">
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group ">
+                            <label>Direccion</label>
+                            <textarea name="address" class="form-control">ad</textarea>
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group ">
+                            <label>Sueldo</label>
+                            <input type="text" name="salary" class="form-control" value="1200">
+                            <span class="help-block"></span>
+                        </div>
+                        <input type="hidden" name="id" value="4">
+                        <input type="submit" class="btn btn-primary" value="Enviar">
+                        <a href="http://localhost/php-crud/Empleado/index.php" class="btn btn-default">Cancelar</a>
+                    </form>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+</body></html>
