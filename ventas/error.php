@@ -20,7 +20,7 @@
                         <h1>Solicitud Inválida</h1>
                     </div>
                     <div class="alert alert-danger fade in">
-                        <p>Lo siento, has realizado una solicitud inválida. Por favor, <a href="../index.php" class="alert-link">regresa</a> e intenta de nuevo.</p>
+                        <p>Lo siento, has realizado una solicitud inválida. Por favor, <a href="../index_ventas.php" class="alert-link">regresa</a> e intenta de nuevo.</p>
                     </div>
                 </div>
             </div>        

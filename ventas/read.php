@@ -97,7 +97,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <label>ID Usuario</label>
                         <p class="form-control-static"><?php echo $Usuario_id; ?></p>
                     </div>
-                    <p><a href="../index.php" class="btn btn-primary">Volver</a></p>
+                    <p><a href="../index_ventas.php" class="btn btn-primary">Volver</a></p>
                 </div>
             </div>        
         </div>
